@@ -1,0 +1,9 @@
+.block{
+    border: 2px solid blue;
+    width: 354px;
+    padding: 10px;
+}
+.block img{
+    padding: 10px;
+    width: 200px;
+}

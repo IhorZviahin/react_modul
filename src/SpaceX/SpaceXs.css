@@ -1,0 +1,8 @@
+.wrapper {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    row-gap: 20px;
+}
