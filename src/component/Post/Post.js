@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 import './Post.css'
 
@@ -7,7 +8,7 @@ const Post = ({post: {id, body}}) => {
         <div className={'post'}>
             <div> {id}) </div>
             <div> Body: {body}</div>
-            <button>PostDetail</button>
+            <Link to={id.toString()}> <button>PostDetail</button> </Link>
         </div>
     );
 };

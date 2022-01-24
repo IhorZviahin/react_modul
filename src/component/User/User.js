@@ -1,9 +1,10 @@
 import React from 'react';
 
 import "./User.css"
+import {Link} from "react-router-dom";
 
 
-const User = ({user:{id, name, username, email}}) => {
+const User = ({user:{id,name,username,email}}) => {
     return (
         <div className={'user'}>
             <div> Id){id}</div>
@@ -11,8 +12,7 @@ const User = ({user:{id, name, username, email}}) => {
             <div> username: {username}</div>
             <div> email: {email}</div>
 
-            {/*<link to={id.toString()}><button>UserDetalil</button></link>*/}
-
+            <Link to={id.toString()}> <button>GetUserInfo</button> </Link>
         </div>
     );
 };
