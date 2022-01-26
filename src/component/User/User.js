@@ -13,6 +13,10 @@ const User = ({user:{id,name,username,email}}) => {
             <div> email: {email}</div>
 
             <Link to={id.toString()}> <button>GetUserInfo</button> </Link>
+
+            <Link to={`${id}/albums`}>
+                <button>albums</button>
+            </Link>
         </div>
     );
 };

@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {Link, Outlet, useParams} from "react-router-dom";
-import {postService} from "../../services/post.service";
+import {userService} from "../../services/user.service";
 
 const UserDetailsPage = () => {
     let {id} = useParams();
     const [userDetails, setUserDetails] = useState(null);
     useEffect(() => {
-        postService.getById(id).then(value => setUserDetails({...value}))
+        userService.getById(id).then(value => setUserDetails({...value}))
     }, [id])
     return (
         <div>
@@ -15,8 +15,9 @@ const UserDetailsPage = () => {
                     userDetails && (
                         <div>
                             <div>{userDetails.id}</div>
-                            <div> Title: {userDetails.title}</div>
-                            <div> Body: {userDetails.body}</div>
+                            <div> Name: {userDetails.name}</div>
+                            <div> Username: {userDetails.username}</div>
+                            <div> Email: {userDetails.email}</div>
                             <Link to={`/users/${id}/posts`}>
                                 <button>GetPost</button>
                             </Link>
