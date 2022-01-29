@@ -21,12 +21,12 @@ function App() {
                 <Route index element={<HomePage/>}/>
 
                 <Route path={'users'} element={<UsersPage/>}>
-                    <Route path={':id'} element={<UserDetailsPage/>}>
+                    <Route exact path={':id'} element={<UserDetailsPage/>}>
                         <Route path={'posts'} element={<UserPostPage/>}/>
                     </Route>
 
                     <Route path={':id/albums'} element={<UserAlbums/>}>
-                        <Route path={':albumid/photos'} element={<Photos/>}/>
+                        <Route path={':id/photos'} element={<Photos/>}/>
                     </Route>
                 </Route>
 

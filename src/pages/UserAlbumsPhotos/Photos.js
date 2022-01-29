@@ -1,9 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {useParams} from "react-router-dom";
+
+import {albumService} from "../../services/album.service";
+import "./Photo.css"
 
 const Photos = () => {
+    let {id} = useParams();
+    const [photo, setphoto] = useState(null);
+
+    useEffect(() => {
+        albumService.getByalbumsid(id).then(value => setphoto(value))
+    }, [id])
     return (
         <div>
-            photo
+            {
+                photo &&
+                (<div className={"photo"}>
+                    <div>
+                        <div>{photo.id}</div>
+                        <div>{photo.title}</div>
+                    </div>
+                    <div><img src={photo.url}/></div>
+                </div>)
+            }
         </div>
     );
 };
