@@ -20,7 +20,7 @@ const Photos = () => {
                         <div>{photo.id}</div>
                         <div>{photo.title}</div>
                     </div>
-                    <div><img src={photo.url}/></div>
+                    <div><img src={`${photo.url}`}/></div>
                 </div>)
             }
         </div>
