@@ -9,8 +9,9 @@ const Photos = () => {
     const [photo, setphoto] = useState(null);
 
     useEffect(() => {
-        albumService.getByalbumsid(id).then(value => setphoto(value))
+        albumService.getByphotosid(id).then(value => setphoto(value))
     }, [id])
+    console.log(photo)
     return (
         <div>
             {

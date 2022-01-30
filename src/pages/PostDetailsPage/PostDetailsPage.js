@@ -8,7 +8,9 @@ const PostDetailsPage = () => {
     useEffect(() => {
         postService.getById(id).then(value => setPostDetails({...value}))
     },[id])
+    console.log(postDetails)
     return (
+
         <div>
             <div>
                 {
