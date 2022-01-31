@@ -14,7 +14,6 @@ const reduser = (state, action) => {
 
 function App() {
     let [state, dispatch] = useReducer(reduser, {count1: 0});
-
     return (
         <div>
             <div>{state.count1}</div>
