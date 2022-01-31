@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import {useReducer} from "react";
+
+const reduser = (state, action) => {
+    switch (action.type) {
+        case 'inc':
+            return {count1: state.count1 + 1};
+        case 'dec':
+            return {count1: state.count1 - 1};
+        case 'reset':
+            return {count1: state.count1 = 0};
+    }
+    return state
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    let [state, dispatch] = useReducer(reduser, {count1: 0});
+
+    return (
+        <div>
+            <div>{state.count1}</div>
+            <button onClick={() => dispatch({type: "inc"})}>Inc</button>
+            <button onClick={() => dispatch({type: "dec"})}>Dec</button>
+            <button onClick={() => dispatch({type: "reset"})}>Reset</button>
+        </div>
+    );
 }
 
 export default App;
