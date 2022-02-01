@@ -9,13 +9,16 @@ const Form = ({getFormData}) => {
         reset()
     }
 
+
     return (
-        <form onSubmit={handleSubmit(submit)}>
-            <label>model: <input type="text" {...register('model')} /></label>
-            <label>price: <input type="text" {...register('price')} /></label>
-            <label>year: <input type="text" {...register('year')} /></label>
-            <button>Save</button>
-        </form>
+        <div>
+            <div>
+                <form onSubmit={handleSubmit(submit)}>
+                    <label>Dog: <input type="text" {...register('dogname')} /></label>
+                    <button>SaveDog</button>
+                </form>
+            </div>
+        </div>
     );
 };
 

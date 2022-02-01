@@ -1,22 +1,46 @@
 import {useState} from "react";
+
 import Form from "./components/Form/Form";
-import Cars from "./components/Cars/Cars";
+import Dogs from "./components/Dogs/Dogs";
+import FormCat from "./components/Form/FormCat";
+import Cats from "./components/Cats/Cats";
+import './App.css'
 
 function App() {
-    const [cars, setCars] = useState([]);
+    const [dogs, setDogs] = useState([]);
 
     const getFormData = (data) => {
-        setCars([...cars, {id: new Date().getTime(), ...data}])
+        setDogs([...dogs, {id: new Date().getTime(), ...data}])
     }
 
-    const getCarid = (id) => {
-        setCars(cars.filter(car => car.id !== id))
+    const getDogid = (id) => {
+        setDogs(dogs.filter(dog => dog.id !== id))
     }
+
+////////////////////////////////
+
+    const [cats, setCats] = useState([]);
+
+    const getFormCatData = (dataCat) => {
+        setCats([...cats, {id: new Date().getTime(), ...dataCat}])
+    }
+
+    const getCatid = (id) => {
+        setCats(cats.filter(cat => cat.id !== id))
+    }
+
+
     return (
+        <div className={'Block'}>
+            <div>
+                <Form getFormData={getFormData}/>
+                <Dogs dogs={dogs} getDogid={getDogid}/>
+            </div>
 
-        <div>
-            <Form getFormData={getFormData}/>
-            <Cars cars={cars} getCarid={getCarid}/>
+            <div>
+                <FormCat getFormCatData={getFormCatData}/>
+                <Cats cats={cats} getCatsid={getCatid}/>
+            </div>
         </div>
     );
 }
