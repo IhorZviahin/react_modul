@@ -39,7 +39,7 @@ function App() {
 
             <div>
                 <FormCat getFormCatData={getFormCatData}/>
-                <Cats cats={cats} getCatsid={getCatid}/>
+                <Cats cats={cats} getCatid={getCatid}/>
             </div>
         </div>
     );
