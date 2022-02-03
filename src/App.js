@@ -1,25 +1,29 @@
 import {useState} from "react";
-import {Form, Cars} from "./Components";
 
+import {Form} from "./Components";
+import {Cars} from "./Components";
 
 function App() {
-  const [cars,setCars] = useState([]);
+    const [cars, setCars] = useState([]);
 
-  const getformData =(data)=>{
-      setCars([...cars, {id: new Date().getTime(), ...data}])
+    const getformData = (data) => {
+        setCars([...cars, {id: new Date().getTime(), ...data}])
 
-  }
+    }
+    const getCarid = (id) => {
+        setCars(cars.filter(car => car.id !== id))
+    }
 
-  return (
+    return (
 
 
-    <div >
+        <div>
 
-      <Form getformData ={getformData}/>
-      <Cars cars ={cars} getCarid={getCarid} />
+            <Form getformData={getformData}/>
+            <Cars cars={cars} getCarid={getCarid}/>
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;

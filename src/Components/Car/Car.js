@@ -8,7 +8,7 @@ const Car = ({car: {id, model, prise, year}, getCarid}) => {
                 <div>prise: {prise}</div>
                 <div>year: {year}</div>
             </div>
-            <button>Delate</button>
+            <button onClick={()=>getCarid(id)}>Delate</button>
         </div>
 
     );
