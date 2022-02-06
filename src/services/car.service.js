@@ -1,9 +1,9 @@
 import {axiosService} from "./axios.service";
 
-import urls from "../Constants/urls";
+import {urls} from "../Constants";
 
 export const carService = {
     getAll: () => axiosService.get(urls.cars).then(value => value.data),
-    create: (car) => axiosService.post(urls.cars, car).then((value => value.data)),
-    deletyByid: (id) => axiosService.delete(`${urls.cars}/${id}`)
+    create: (car) => axiosService.post(urls.cars, car).then(value => value.data),
+    deleteById: (id) => axiosService.delete(`${urls.cars}/${id}`)
 }

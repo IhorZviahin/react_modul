@@ -1,8 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {deleteCar} from "../../store";
+import {deleteCarThunk} from "../../store";
 
-const Car = ({car: {id, model, prise, year}}) => {
+const Car = ({car: {id, model, price, year}}) => {
     const dispatch = useDispatch()
     const {info} = useSelector(state => state['carReducer']);
 
@@ -11,10 +11,10 @@ const Car = ({car: {id, model, prise, year}}) => {
             <h1>{info}</h1>
             <div>
                 <div>model: {model}</div>
-                <div>prise: {prise}</div>
+                <div>prise: {price}</div>
                 <div>year: {year}</div>
             </div>
-            <button onClick={()=>dispatch(deleteCar({id}))}>Delate</button>
+            <button onClick={()=>dispatch(deleteCarThunk({id}))}>Delate</button>
         </div>
 
     );
