@@ -1,2 +1,2 @@
-export * from "./movie.slice"
+export * from "./movies.slice"
 export * from "./store.conf"

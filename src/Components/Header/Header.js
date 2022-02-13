@@ -9,6 +9,7 @@ const Header = () => {
             <div className={'header'}>
                 <NavLink to="/">Movies</NavLink>
                 <NavLink to="GenreBadge">Genre</NavLink>
+                <NavLink to="SearchMovies">SearchMovies</NavLink>
             </div>
             <Outlet/>
         </>

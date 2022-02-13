@@ -1,0 +1,15 @@
+.MoviesList{
+    background: #d0dbf5;
+    width: 330px;
+    border: 2px;
+    margin: 10px;
+}
+.MoviesList img{
+    width: 90%;
+}
+
+.MoviesList_img{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
